@@ -1,1 +1,33 @@
-@import 'tailwindcss'
+@import 'tailwindcss';
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  --color-background: #ffffff; /* Light theme background */
+  --color-foreground: #2e3338; /* Light theme text color */
+  --color-muted: #4f5660; /* Muted text (subtle) */
+  --color-accent: #5865f2; /* Accent (Discord blurple) */
+  --color-border: #d3d3d3; /* Borders and dividers */
+  --color-input-background: #e3e5e8; /* Input fields */
+  --color-input-text: #060607; /* Input text */
+  --color-hover: #f2f3f5; /* Hover states */
+  --color-active: #e3e5e8; /* Active elements */
+}
+
+@layer base {
+  [data-theme='dark'] {
+    --color-background: #313338; /* Dark theme background */
+    --color-foreground: #ffffff; /* Dark theme text color */
+    --color-muted: #b5bac1; /* Muted text (subtle) */
+    --color-accent: #5865f2; /* Accent (Discord blurple) */
+    --color-border: #1e1f22; /* Borders and dividers */
+    --color-input-background: #1e1f22; /* Input fields */
+    --color-input-text: #dbdee1; /* Input text */
+    --color-hover: #3c3f45; /* Hover states */
+    --color-active: #4e5058; /* Active elements */
+  }
+}
+
+button {
+  @apply px-6 py-3 text-white bg-blue-600 rounded-lg hover:bg-blue-700 disabled:bg-blue-600/20 disabled:text-white/20 disabled:cursor-not-allowed;
+}
