@@ -1,4 +1,6 @@
 <script>
+  import SampleConversation from "$lib/SampleConversation.svelte"
+
   export let title = "My *Space";
   export let subtitle = "Productivity through public accountability.";
 </script>
@@ -12,5 +14,6 @@
         Login
       </button>
     </div>
+    <SampleConversation />
   </div>
 </section>
