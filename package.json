@@ -1,7 +1,7 @@
 {
 	"name": "my-starspace",
 	"private": true,
-	"version": "0.0.2a",
+	"version": "0.0.2-alpha-2",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
