@@ -71,6 +71,13 @@
 </style>
 
 <div class="chat-container text-left">
+  <div class="relative flex items-center mb-5">
+    <hr class="flex-grow border-t border-gray-600">
+    <span class="absolute left-1/2 -translate-x-1/2 bg-gray-800 text-gray-400 px-2 py-0.5 rounded text-xs font-semibold">
+      March 14, 2025
+    </span>
+  </div>
+  
   {#each messages as msg}
     <div class="message {msg.bot ? 'bot' : 'user'}">
       <div class="flex">
