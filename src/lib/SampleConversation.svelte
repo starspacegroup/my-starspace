@@ -12,14 +12,17 @@
    */
   let interval;
 
+  const botAvatar = 'https://cdn.discordapp.com/app-icons/1234640000239276053/c2157496a58f0c63c7de8bd1785cd11c.png';
+  const userAvatar = 'https://cdn.discordapp.com/avatars/293484886726279168/056525646c5d0a955f276c80e8700815.webp?size=80';
+
   const conversation = [
   { user: `My *Space`, messageBody: `Starting 25-minute timebox: "Creating a Software Feature".`, bot: true, time: `<t:1741961887:t>` },
-  { user: `You`, messageBody: `Here's the mockup image for my idea:`, time: `<t:1741962007:t>` },
-    { user: `You`, messageBody: `<img src="/sample-screenshot.png" alt="" class="">`, time: `<t:1741962247:t>` },
-      { user: `You`, messageBody: `For styling, I'll set up Tailwind CSS because it makes things easier to style quickly.`, time: `<t:1741962127:t>` },
-  { user: `You`, messageBody: `Now I'll add a basic page with a form for user input.`, time: `<t:1741962187:t>` },
-  { user: `You`, messageBody: `Time to test things out in development mode: \`npm run dev\`.`, time: `<t:1741962307:t>` },
-  { user: `You`, messageBody: `Looks good so far. I'm going to push this to GitHub so I have a backup.`, time: `<t:1741962367:t>` },
+  { user: `David`, messageBody: `Here's the mockup image for my idea:`, time: `<t:1741962007:t>` },
+    { user: `David`, messageBody: `<img src="/sample-screenshot.png" alt="" class="">`, time: `<t:1741962247:t>` },
+      { user: `David`, messageBody: `For styling, I'll set up Tailwind CSS because it makes things easier to style quickly.`, time: `<t:1741962127:t>` },
+  { user: `David`, messageBody: `Now I'll add a basic page with a form for user input.`, time: `<t:1741962187:t>` },
+  { user: `David`, messageBody: `Time to test things out in development mode: \`npm run dev\`.`, time: `<t:1741962307:t>` },
+  { user: `David`, messageBody: `Looks good so far. I'm going to push this to GitHub so I have a backup.`, time: `<t:1741962367:t>` },
   { user: `My *Space`, messageBody: `Time's up! 25-minute session completed. Take a short break.`, bot: true, time: `<t:1741962427:t>` }
 ];
 
@@ -33,7 +36,7 @@
       } else {
         clearInterval(interval);
       }
-    }, 4000);
+    }, 222);
   }
 
   onMount(() => {
@@ -41,10 +44,11 @@
   });
 </script>
 
-<style>
+<style lang="postcss">
+  @reference "tailwindcss";
+
   .chat-container {
-    max-width: 600px;
-    margin: auto;
+    @apply max-w-5xl mx-auto;
     background: #2c2f33;
     color: white;
     padding: 20px;
@@ -61,7 +65,7 @@
     text-align: left;
   }
   .user {
-    background: #99aab5;
+    @apply border-1 border-gray-500;
     text-align: right;
   }
 </style>
@@ -70,9 +74,17 @@
   {#each messages as msg}
     <div class="message {msg.bot ? 'bot' : 'user'}">
       <div class="timestamp">
-        {formatDiscordTimestamp(msg.time)}
+        <strong>{msg.user}</strong>
+        <span class="font-extralight text-foreground/50">
+          {formatDiscordTimestamp(msg.time)}
+        </span>
       </div>
-      <strong>{msg.user}:</strong> {@html msg.messageBody}
+      <div>
+        <img src={msg.bot ? botAvatar : userAvatar} alt="">
+      </div>
+      <div>
+        {@html msg.messageBody}
+      </div>
     </div>
   {/each}
 </div>

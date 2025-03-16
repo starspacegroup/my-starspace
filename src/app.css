@@ -2,6 +2,7 @@
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
+
 @theme {
   --color-background: #ffffff; /* Light theme background */
   --color-foreground: #2e3338; /* Light theme text color */
