@@ -5,7 +5,7 @@
 	export let data: APIUser;
 
 	async function logout() {
-		await fetch('/api/v1/user/logout', {
+		await fetch('/api-0/auth/signout', {
 			method: 'POST',
 			body: JSON.stringify({})
 		});
