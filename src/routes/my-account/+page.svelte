@@ -13,3 +13,5 @@
  {#each Object.keys(discord_session_user) as key, value}
 	<div>{key}: {JSON.stringify(discord_session_user[key])}</div>
 	{/each}
+
+{JSON.stringify(data)}
