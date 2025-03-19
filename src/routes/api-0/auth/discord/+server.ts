@@ -65,7 +65,11 @@ export async function GET({ url, cookies }) {
 
   // Store user session in cookies
   // console.log('User:', user);
-  cookies.set('discord_session_user', JSON.stringify(user), { path: '/' });
+  cookies.set('discord_session_user', JSON.stringify(user), {
+    path: '/',
+    httpOnly: false,
+    secure: false
+  });
 
   // Redirect to home with a success message (Adjust this as needed)
   throw redirect(302, `/my-account`);
