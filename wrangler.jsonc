@@ -27,7 +27,13 @@
 	 */
 	"vars": {
 		"NODE_ENV": "development"
-	}
+	},
+	"kv_namespaces": [
+		{
+			"binding": "TIMEBOX_KV",
+			"id": "f0700245eb5749e4b442c3e1a02dc1d5"
+		}
+	]
 	/**
 	 * Note: Use secrets to store sensitive data.
 	 * https://developers.cloudflare.com/workers/configuration/secrets/
