@@ -1,19 +1,15 @@
 <script lang="ts">
-	import type { APIUser } from 'discord-api-types/v10';
-	import { goto } from '$app/navigation';
+	let { data } = $props()
+	const discord_session_user = data.data;
 
-	export let data: APIUser;
-
-	async function logout() {
-		await fetch('/api-0/auth/signout', {
-			method: 'POST',
-			body: JSON.stringify({})
-		});
-
-		goto('/');
-	}
 </script>
 
-<p>User's Discord ID: {data.id}</p>
+<div>
+	<h1 class="text-2xl font-bold mb-4">Hello, {discord_session_user.username}!</h1>
+	<img src={`https://cdn.discordapp.com/avatars/${discord_session_user.id}/${discord_session_user.avatar}`} alt="" class="rounded-full w-24 h-24" />
+</div>
 
-<button on:click={logout}>Logout</button>
+<!-- For each of the keys in props.data -->
+ {#each Object.keys(discord_session_user) as key, value}
+	<div>{key}: {JSON.stringify(discord_session_user[key])}</div>
+	{/each}

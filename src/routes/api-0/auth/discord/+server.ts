@@ -1,8 +1,6 @@
 import { json, redirect } from '@sveltejs/kit';
 import { PUBLIC_DISCORD_CLIENT_ID, PUBLIC_DISCORD_REDIRECT_URI } from '$env/static/public';
 import { DISCORD_CLIENT_SECRET } from '$env/static/private';
-import { dev } from '$app/environment';
-import type { Cookies } from '@sveltejs/kit';
 
 // Define types for the Discord user and token response
 interface DiscordUser {
@@ -34,7 +32,7 @@ interface SessionData {
 }
 
 
-export async function GET({ url }) {
+export async function GET({ url, cookies }) {
   const code = url.searchParams.get('code');
   if (!code) return json({ error: 'No code provided' }, { status: 400 });
 
@@ -65,8 +63,9 @@ export async function GET({ url }) {
 
   const user: any = await userResponse.json();
 
-  // Store user session (For now, let's log it)
-  console.log('User:', user);
+  // Store user session in cookies
+  // console.log('User:', user);
+  cookies.set('discord_session_user', JSON.stringify(user), { path: '/' });
 
   // Redirect to home with a success message (Adjust this as needed)
   throw redirect(302, `/my-account`);
