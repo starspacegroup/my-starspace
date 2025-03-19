@@ -26,7 +26,10 @@
 	 * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
 	 */
 	"vars": {
-		"NODE_ENV": "development"
+		"NODE_ENV": "development",
+		"PUBLIC_DISCORD_CLIENT_ID": "1233587033188859924",
+		"PUBLIC_DISCORD_REDIRECT_URI": "https://my.starspace.group/api-0/auth/discord",
+		"PUBLIC_DISCORD_PUBLIC_KEY": "50d66ff78992e07b07da85af692b0cfc180887e5db8c396217a5eef1d43b07b9"
 	},
 	"kv_namespaces": [
 		{
