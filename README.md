@@ -1,38 +1,42 @@
-# sv
+# My *Space
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A productivity blog for the *Space Discord server.
 
-## Creating a project
+Created with SvelteKit and hosted on Cloudflare Pages, Workers, and Workflows.
 
-If you're seeing this, you've probably already done this step. Congrats!
+Built for *Space members, by *Space members.
 
-```bash
-# create a new project in the current directory
-npx sv create
+## Table of Contents
 
-# create a new project in my-app
-npx sv create my-app
-```
+- [My \*Space](#my-space)
+  - [Table of Contents](#table-of-contents)
+  - [Creating a Blog (Users)](#creating-a-blog-users)
+  - [Contributing (Developers)](#contributing-developers)
+    - [Building locally](#building-locally)
+    - [Pull Requests](#pull-requests)
 
-## Developing
+## Creating a Blog (Users)
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+- [Join the *Space Discord server](https://discord.gg/6JXhPBAUWU).
+- Log in and create your account on [My *Space](https://my.starspace.group).
 
-```bash
-npm run dev
+---
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## Contributing (Developers)
 
-## Building
+### Building locally
 
-To create a production version of your app:
+- Clone this repository
+  `git clone https://github.com/starspace-group/my-starspace.git`.
+- CD into the project folder: `cd my-starspace`.
+- Create `.env` file: `cp .env.example .env`.
+- Install dependencies: `yarn i`.
+- Run the development server: `yarn run dev`.
+- Open [http://localhost:5173](http://localhost:5173) in your browser to view
+  the project.
 
-```bash
-npm run build
-```
+### Pull Requests
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Pull requests are welcome. For major changes, please open an issue first to
+discuss what you would like to change. Please make sure to create/update tests
+as appropriate.
