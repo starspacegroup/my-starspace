@@ -27,24 +27,24 @@
 	 */
 	"vars": {
 		"NODE_ENV": "production"
-	},
-	"kv_namespaces": [
-		{
-			"binding": "TIMEBOX_KV",
-			"id": "f0700245eb5749e4b442c3e1a02dc1d5",
-			"preview_id": "your-timebox-kv-preview-id"
-		},
-		{
-			"binding": "SESSION_KV",
-			"id": "your-session-kv-id",
-			"preview_id": "your-session-kv-preview-id"
-		},
-		{
-			"binding": "USER_KV",
-			"id": "your-user-kv-id",
-			"preview_id": "your-user-kv-preview-id"
-		}
-	]
+	}
+	// "kv_namespaces": [
+	// 	{
+	// 		"binding": "TIMEBOX_KV",
+	// 		"id": "f0700245eb5749e4b442c3e1a02dc1d5",
+	// 		"preview_id": "your-timebox-kv-preview-id"
+	// 	},
+	// 	{
+	// 		"binding": "SESSION_KV",
+	// 		"id": "your-session-kv-id",
+	// 		"preview_id": "your-session-kv-preview-id"
+	// 	},
+	// 	{
+	// 		"binding": "USER_KV",
+	// 		"id": "your-user-kv-id",
+	// 		"preview_id": "your-user-kv-preview-id"
+	// 	}
+	// ]
 	/**
 	 * Note: Use secrets to store sensitive data.
 	 * https://developers.cloudflare.com/workers/configuration/secrets/
