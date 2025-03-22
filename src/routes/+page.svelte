@@ -1,6 +1,9 @@
 <script>
-  import LoginButton from "$lib/LoginButton.svelte"
   import SampleConversation from "$lib/SampleConversation.svelte";
+  import { signIn, signOut } from "@auth/sveltekit/client"
+  import { page } from "$app/stores";
+  import { SignIn, SignOut } from "@auth/sveltekit/components"
+  import Icon from "@iconify/svelte"
 
   export let title = "My *Space";
   export let subtitle = "Productivity through public accountability.";
@@ -11,9 +14,22 @@
     <div class="max-w-2xl">
       <h1 class="text-4xl font-bold sm:text-6xl">{title}</h1>
       <p class="mt-4 text-lg sm:text-xl">{subtitle}</p>
-      <div class="mt-6">
-        <LoginButton />
-      </div>
+      {#if $page.data.session}
+        <p>Signed in as {$page.data.session.user?.name}</p>
+        <SignOut signOutPage="user-auth/logout" options={{redirectTo: "/"}}>
+          <div slot="submitButton" class="flex space-x-2 items-center cursor-pointer">
+            <Icon icon="ph:discord-logo-fill" />
+            <span>Logout</span>
+          </div>  
+        </SignOut>
+      {:else}
+        <SignIn provider="discord" signInPage="user-auth/login" options={{redirect: false, redirectTo: "/user-dashboard"}}>
+          <div slot="submitButton" class="flex space-x-2 items-center cursor-pointer">
+            <Icon icon="ph:discord-logo-fill" />
+            <span>Login</span>
+          </div>  
+        </SignIn>
+      {/if}
     </div>
   </section>
   <section class="max-w-2xl mx-auto mt-16">

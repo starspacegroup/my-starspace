@@ -6,7 +6,7 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
-		"preview": "npm run build && wrangler pages dev",
+		"preview": "npm run build && wrangler pages dev --live-reload",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -17,6 +17,7 @@
 		"cf-typegen": "wrangler types && move worker-configuration.d.ts src/"
 	},
 	"devDependencies": {
+		"@auth/sveltekit": "^1.8.0",
 		"@cloudflare/workers-types": "^4.20250311.0",
 		"@eslint/compat": "^1.2.5",
 		"@eslint/js": "^9.18.0",

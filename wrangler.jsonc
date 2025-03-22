@@ -26,15 +26,23 @@
 	 * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
 	 */
 	"vars": {
-		"NODE_ENV": "production",
-		"PUBLIC_DISCORD_CLIENT_ID": "1233587033188859924",
-		"PUBLIC_DISCORD_REDIRECT_URI": "https://my.starspace.group/api-0/auth/discord",
-		"PUBLIC_DISCORD_PUBLIC_KEY": "50d66ff78992e07b07da85af692b0cfc180887e5db8c396217a5eef1d43b07b9"
+		"NODE_ENV": "production"
 	},
 	"kv_namespaces": [
 		{
 			"binding": "TIMEBOX_KV",
-			"id": "f0700245eb5749e4b442c3e1a02dc1d5"
+			"id": "f0700245eb5749e4b442c3e1a02dc1d5",
+			"preview_id": "your-timebox-kv-preview-id"
+		},
+		{
+			"binding": "SESSION_KV",
+			"id": "your-session-kv-id",
+			"preview_id": "your-session-kv-preview-id"
+		},
+		{
+			"binding": "USER_KV",
+			"id": "your-user-kv-id",
+			"preview_id": "your-user-kv-preview-id"
 		}
 	]
 	/**
