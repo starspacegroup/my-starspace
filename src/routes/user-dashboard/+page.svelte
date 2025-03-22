@@ -8,7 +8,7 @@
   // Add these variables to track your conditions
   let usernameRegistered = false;
   let hasAcceptedTOS = false;
-  let isNewDiscordUser = false;
+  let isNewDiscordUser = true;
   let canRegisterUsername = true;
 </script>
 
@@ -35,6 +35,9 @@
         <span class="text-red-500 font-black text-4xl">THIS DOES NOT WORK YET</span>
         <h2 class="text-xl font-semibold mb-2">Account Information</h2>
         <p class="text-white">Signed in as <span class="font-medium">{userSignedIn.user?.name ?? 'Unknown User'}</span></p>
+        <p class={userSignedIn.user?.discriminator === '0' ? 'text-green-600' : 'text-red-700'}>
+          {userSignedIn.user?.discriminator === '0' ? 'You can register your username (discriminator == 0).' : 'You can not register your username (discriminator != 0)'}
+        </p>
         <p class="text-white mb-2">
           <span class="font-medium">Discord ID:</span> 
           {userSignedIn.user?.username ?? 'N/A'}#{userSignedIn.user?.discriminator ?? 'N/A'}
