@@ -8,7 +8,7 @@
   const userSignedIn = page.data.session?.user || false;
 </script>
 
-<main class="min-h-screen w-screen flex items-center min-w-xs">
+<main class="min-h-screen flex items-center min-w-xs">
   <div class="sm:max-w-3xl mx-auto p-6 text-white bg-[#2b2d31] rounded-md shadow-lg">
     <h1 class="text-2xl font-bold mb-4">User Settings</h1>
     
