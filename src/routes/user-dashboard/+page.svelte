@@ -10,7 +10,7 @@
 
 <main class="min-h-screen flex items-center min-w-xs">
   <div class="sm:max-w-3xl mx-auto p-6 text-white bg-[#2b2d31] rounded-md shadow-lg">
-    <h1 class="text-2xl font-bold mb-4">User Settings</h1>
+    <h1 class="text-2xl font-bold mb-4">My *Space Settings</h1>
     
     {#if userSignedIn && userSignedIn.image}
     <div class="flex items-center gap-4 bg-[#313338] p-4 rounded-md mb-6">
