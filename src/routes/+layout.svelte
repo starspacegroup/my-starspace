@@ -3,5 +3,7 @@
 	let { children } = $props();
 </script>
 
-{@render children()}
+<main class="w-full">
+	{@render children()}
+</main>
 

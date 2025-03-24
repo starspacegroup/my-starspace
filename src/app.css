@@ -2,7 +2,6 @@
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
-
 @theme {
   --color-background: #ffffff; /* Light theme background */
   --color-foreground: #2e3338; /* Light theme text color */
@@ -27,6 +26,10 @@
     --color-hover: #3c3f45; /* Hover states */
     --color-active: #4e5058; /* Active elements */
   }
+}
+
+html, body {
+  @apply w-full overflow-x-hidden;
 }
 
 button {
