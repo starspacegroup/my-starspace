@@ -4,7 +4,7 @@
 	"version": "0.0.2-alpha-2",
 	"type": "module",
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "vite dev --host 127.0.0.1 --port 8788",
 		"build": "vite build",
 		"preview": "npm run build && wrangler pages dev --live-reload",
 		"prepare": "svelte-kit sync || echo ''",
