@@ -16,15 +16,10 @@
       <p class="mt-4 text-lg sm:text-xl">{subtitle}</p>
       {#if $page.data.session}
         <p>Signed in as {$page.data.session.user?.name}</p>
-        <SignOut signOutPage="user-auth/logout" options={{redirectTo: "/"}}>
-          <div slot="submitButton" class="flex space-x-2 items-center cursor-pointer">
-            <Icon icon="ph:discord-logo-fill" />
-            <span>Logout</span>
-          </div>  
-        </SignOut>
+         <a href="/user-dashboard" class="text-blue-500 hover:underline">My Dashboard</a>
       {:else}
         <SignIn provider="discord" signInPage="user-auth/login" options={{redirect: false, redirectTo: "/user-dashboard"}}>
-          <div slot="submitButton" class="flex space-x-2 items-center cursor-pointer">
+          <div slot="submitButton" class="flex space-x-2 items-center">
             <Icon icon="ph:discord-logo-fill" />
             <span>Login</span>
           </div>  

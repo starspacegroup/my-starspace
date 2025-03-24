@@ -21,11 +21,11 @@
         alt={`${userSignedIn.user.username}'s avatar`}
         class="w-10 h-10 rounded-full border-2 border-blue-500"
       />
-      <SignOut 
-        signOutPage="user-auth/logout" 
-        options={{ redirectTo: "/" }}
-        class="px-4 py-2  hover:bg-gray-200 rounded-md text-sm transition-colors"
-      />
+      <SignOut provider="discord" signOutPage="user-auth/logout" options={{redirect: false, redirectTo: "/"}}>
+        <div slot="submitButton" class="flex space-x-2 items-center">
+          <span>Logout</span>
+        </div>
+      </SignOut>
     </div>
   {/if}
 
