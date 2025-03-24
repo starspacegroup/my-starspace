@@ -50,7 +50,7 @@
       <div class="my-6">
         <label class="block mb-2 text-sm font-medium text-gray-300" for="username_text">Choose a url slug:</label>
         <div class="flex items-center bg-[#1e1f22] rounded-md">
-          <span class="text-gray-400 italic pl-3">https://my.starspace.group/</span>
+          <span class="text-gray-400 italic pl-3">my.starspace.group/</span>
           <input type="text" value={userSignedIn.username ?? 'username'} placeholder="Username" class="bg-transparent text-white ml-2 flex-1 ring-green-500 ring-1 rounded focus:ring-0 p-1 w-12" id="username_text" />
         </div>
       </div>
@@ -67,7 +67,7 @@
     <div>
       <label class="block mb-2 text-sm font-medium text-gray-300" for="username_text">Change your url slug:</label>
       <div class="flex items-center bg-[#1e1f22] p-2 rounded-md">
-        <span class="text-gray-400 italic">https://my.starspace.group/</span>
+        <span class="text-gray-400 italic">my.starspace.group/</span>
         <input type="text" value={userSignedIn.username ?? 'username'} placeholder="Username" class="bg-transparent text-white ml-2 flex-1 ring-1 rounded focus:ring-0 p-1" id="username_text" />
       </div>
       <div class="text-center">
