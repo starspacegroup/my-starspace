@@ -18,6 +18,7 @@
       <li><strong>Account Information:</strong> When you log in using your Discord account, we collect your Discord user ID, username, and avatar.</li>
       <li><strong>Usage Data:</strong> We collect data about your interactions with the Services, including chat messages, commands used, and activity logs.</li>
       <li><strong>Device and Log Information:</strong> We may collect technical details such as your IP address, browser type, and access times.</li>
+      <li><strong>Cookies:</strong> We currently use cookies solely for session management to maintain your login state during your use of the Services. These cookies expire when your session ends.</li>
   </ul>
 
   <h2 class="text-xl font-semibold mt-4">2. How We Use Your Information</h2>
@@ -52,11 +53,20 @@
       <li>Update or correct your account information.</li>
   </ul>
   
-  <h2 class="text-xl font-semibold mt-4">7. Changes to This Privacy Policy</h2>
+  <h2 class="text-xl font-semibold mt-4">7. Compliance with Laws</h2>
+  <p>We operate in compliance with applicable data protection laws, including but not limited to:</p>
+  <ul class="list-disc ml-6 mt-2">
+      <li>The General Data Protection Regulation (GDPR) for users in the European Union;</li>
+      <li>The California Consumer Privacy Act (CCPA) for residents of California;</li>
+      <li>Other relevant federal, state, and international privacy regulations as applicable.</li>
+  </ul>
+  <p>For more information about your rights under these laws, please contact us.</p>
+  
+  <h2 class="text-xl font-semibold mt-4">8. Changes to This Privacy Policy</h2>
   <p>We may update this Privacy Policy from time to time. Any changes will be effective immediately upon posting. Continued use of the Services constitutes your acceptance of the updated policy.</p>
   
-  <h2 class="text-xl font-semibold mt-4">8. Contact Us</h2>
-  <p>If you have any questions about this Privacy Policy, please contact us at [insert contact email].</p>
+  <h2 class="text-xl font-semibold mt-4">9. Contact Us</h2>
+  <p>If you have any questions about this Privacy Policy, please contact us at support@my.starspace.group.</p>
   
   <p class="mt-6">Last Updated: {lastUpdated}</p>
 </main>
