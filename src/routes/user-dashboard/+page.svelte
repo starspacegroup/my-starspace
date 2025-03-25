@@ -13,8 +13,9 @@
 
   const discordId = userSignedIn.id;
   const discordUsername = userSignedIn.username;
+  const discordName = userSignedIn.name;
   const discordDiscriminator = userSignedIn.discriminator;
-  const discordAvatar = userSignedIn.avatar;
+  const discordImage = userSignedIn.image;
   const discordEmailPartial =  userSignedIn.email?.substring(0, 3) + '...' + getStringFromAtToEnd(userSignedIn.email?.toString() || '');
 
 
@@ -51,12 +52,12 @@
         <h3 class="font-medium">Current Discord Info:</h3>
         <div class="flex-1 w-32 my-3">
           <img 
-          src={userSignedIn.image} 
-          alt={`${userSignedIn.username}'s avatar`} 
+          src={discordImage} 
+          alt={`${discordUsername}'s avatar`} 
           class="mx-auto w-24 h-24 rounded-full border border-gray-600"
           />
           <p class="text-center font-bold">
-            {userSignedIn.name}
+            {discordName}
           </p>
         </div>
         <ul class="list-disc ml-3">
@@ -97,7 +98,7 @@
       <label class="block mb-2 text-sm font-medium text-gray-300" for="username_text">Change your url slug:</label>
       <div class="flex items-center bg-[#1e1f22] p-2 rounded-md">
         <span class="text-gray-400 italic">my.starspace.group/</span>
-        <input type="text" value={userSignedIn.username ?? 'username'} placeholder="Username" class="bg-transparent text-white ml-2 flex-1 ring-1 rounded focus:ring-0 p-1" id="username_text" />
+        <input type="text" value={discordUsername ?? 'username'} placeholder="Username" class="bg-transparent text-white ml-2 flex-1 ring-1 rounded focus:ring-0 p-1" id="username_text" />
       </div>
       <div class="mt-4">
         <button class="mx-auto px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md flex items-center space-x-3">
