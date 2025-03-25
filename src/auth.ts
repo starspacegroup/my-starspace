@@ -10,6 +10,9 @@ declare module "@auth/core/types" {
     user: {
       username?: string;
       discriminator?: string;
+      id?: string;
+      avatar?: string;
+      email?: string;
     } & DefaultSession["user"];
   }
 }
@@ -34,6 +37,9 @@ export const { handle, signIn, signOut } = SvelteKitAuth({
       if (token.discord_user) {
         session.user.username = token.discord_user.username;
         session.user.discriminator = token.discord_user.discriminator;
+        session.user.id = token.discord_user.id;
+        session.user.avatar = token.discord_user.avatar || '';
+        session.user.email = token.discord_user.email || '';
       }
       return session;
     },
