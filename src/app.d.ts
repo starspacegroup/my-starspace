@@ -12,6 +12,7 @@ declare global {
                 AUTH_DISCORD_SECRET: string;
                 AUTH_REDIRECT_PROXY_URL: string;
                 AUTH_URL: string;
+                DISCORD_BOT_TOKEN: string;
             };
             cf: CfProperties;
             ctx: ExecutionContext;
