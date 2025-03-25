@@ -17,9 +17,9 @@
       <p class="mt-4 text-lg sm:text-xl">{@html description}</p>
       {#if page.data.session}
         <p>Signed in as {page.data.session.user?.name}</p>
-         <a href="/user-dashboard" class="text-blue-500 hover:underline">My Dashboard</a>
+         <a href="/my-dashboard" class="text-blue-500 hover:underline">My Dashboard</a>
       {:else}
-        <SignIn provider="discord" signInPage="user-auth/login" options={{redirect: false, redirectTo: "/user-dashboard"}} className="my-3">
+        <SignIn provider="discord" signInPage="user-auth/login" options={{redirect: false, redirectTo: "/my-dashboard"}} className="my-3">
           <div slot="submitButton" class="flex space-x-2 items-center">
             <Icon icon="ph:discord-logo-fill" />
             <span>Discord Login</span>
