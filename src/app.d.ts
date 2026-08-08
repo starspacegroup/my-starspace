@@ -1,7 +1,5 @@
 // See https://svelte.dev/docs/kit/types#app.d.ts
 
-import type { StringSelect } from "discord-interactions";
-
 // for information about these interfaces
 declare global {
     namespace App {

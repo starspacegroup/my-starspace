@@ -1,16 +1,18 @@
-<script>
-  import { onMount } from 'svelte';
+<script lang="ts">
+  import { onDestroy, onMount } from 'svelte';
   import { formatDiscordTimestamp } from './formatters';
 
-  /**
-   * @type {any[]}
-   */
-  let messages = [];
+  interface ConversationMessage {
+    user: string;
+    messageBody: string;
+    time: string;
+    bot?: boolean;
+    imageUrl?: string;
+  }
+
+  let messages: ConversationMessage[] = [];
   let index = 1;
-  /**
-   * @type {ReturnType<typeof setTimeout>}
-   */
-  let interval;
+  let interval: ReturnType<typeof setInterval>;
 
   const botAvatar = 'https://cdn.discordapp.com/app-icons/1234640000239276053/c2157496a58f0c63c7de8bd1785cd11c.png';
   const userAvatar = 'https://cdn.discordapp.com/avatars/293484886726279168/056525646c5d0a955f276c80e8700815.webp?size=80';
@@ -18,7 +20,7 @@
   const conversation = [
   { user: `My *Space`, messageBody: `Starting 25-minute timebox: "Creating a Software Feature".`, bot: true, time: `<t:1741961887:R>` },  
   { user: `David`, messageBody: `Here's the mockup image for my idea:`, time: `<t:1741962007:R>` },
-    { user: `David`, messageBody: `<img src="/sample-screenshot.png" alt="" class="">`, time: `<t:1741962247:R>` },
+    { user: `David`, messageBody: 'Attached mockup', imageUrl: '/sample-screenshot.png', time: `<t:1741962247:R>` },
       { user: `David`, messageBody: `For styling, I'll set up Tailwind CSS because it makes things easier to style quickly.`, time: `<t:1741962127:R>` },
   { user: `David`, messageBody: `Now I'll add a basic page with a form for user input.`, time: `<t:1741962187:R>` },
   { user: `David`, messageBody: `Time to test things out in development mode: \`npm run dev\`.`, time: `<t:1741962307:R>` },
@@ -42,6 +44,8 @@
   onMount(() => {
     startSimulation();
   });
+
+  onDestroy(() => clearInterval(interval));
 </script>
 
 <style lang="postcss">
@@ -78,7 +82,7 @@
     </span>
   </div>
   
-  {#each messages as msg}
+  {#each messages as msg (msg.time)}
     <div class="message {msg.bot ? 'bot' : 'user'}">
       <div class="flex">
         <div class="w-20 min-w-20">
@@ -91,9 +95,11 @@
               {formatDiscordTimestamp(msg.time)}
             </span>
           </div>
-          <div>
-            {@html msg.messageBody}
-          </div>
+          {#if msg.imageUrl}
+            <img src={msg.imageUrl} alt={msg.messageBody} />
+          {:else}
+            <p>{msg.messageBody}</p>
+          {/if}
         </div>
       </div>
     </div>

@@ -1,42 +1,40 @@
 # My *Space
 
-A productivity blog for the *Space Discord server.
+My *Space is the current account and dashboard shell for a planned publishing
+service for members of the *Space Discord server. The shipped application
+supports Discord sign-in, guild-aware sessions, and a settings dashboard.
 
-Created with SvelteKit and hosted on Cloudflare Pages, Workers, and Workflows.
+Blog content storage, Discord-to-site publishing, and public blog rendering are
+not implemented yet.
 
-Built for *Space members, by *Space members.
+The app uses SvelteKit, Svelte 5, TypeScript, and Tailwind CSS 4 and deploys to
+Cloudflare Pages.
 
-## Table of Contents
+## Local Development
 
-- [My \*Space](#my-space)
-  - [Table of Contents](#table-of-contents)
-  - [Creating a Blog (Users)](#creating-a-blog-users)
-  - [Contributing (Developers)](#contributing-developers)
-    - [Building locally](#building-locally)
-    - [Pull Requests](#pull-requests)
+Requirements: Node.js 20 and npm.
 
-## Creating a Blog (Users)
+```bash
+git clone https://github.com/starspacegroup/my-starspace.git
+cd my-starspace
+cp .env.example .env
+npm install
+npm run dev
+```
 
-- [Join the *Space Discord server](https://discord.gg/6JXhPBAUWU).
-- Log in and create your account on [My *Space](https://my.starspace.group).
+Open `http://127.0.0.1:8788`. Configure the same URL in Discord for the OAuth
+redirect shown in `.env.example`.
 
----
+## Verification
 
-## Contributing (Developers)
+```bash
+npm run lint
+npm run check
+npm test
+npm run build
+```
 
-### Building locally
+## Contributing
 
-- Clone this repository
-  `git clone https://github.com/starspace-group/my-starspace.git`.
-- CD into the project folder: `cd my-starspace`.
-- Create `.env` file: `cp .env.example .env`.
-- Install dependencies: `yarn i`.
-- Run the development server: `yarn run dev`.
-- Open [http://localhost:5173](http://localhost:5173) in your browser to view
-  the project.
-
-### Pull Requests
-
-Pull requests are welcome. For major changes, please open an issue first to
-discuss what you would like to change. Please make sure to create/update tests
-as appropriate.
+Pull requests are welcome. For major changes, open an issue first and add or
+update tests for changed behavior.

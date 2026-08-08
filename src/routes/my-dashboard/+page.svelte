@@ -27,7 +27,7 @@
   // userSharesServerWithBot = true if discordServerIds includes any of the servers in botJoinedServers:
   const userSharesServerWithBot = discordServerIds.some((serverId) => botJoinedServers.includes(serverId));
 
-  function getStringFromAtToEnd(str: String): String {
+  function getStringFromAtToEnd(str: string): string {
   const atIndex = str.indexOf('@');
   if (atIndex !== -1) {
     return str.substring(atIndex);
