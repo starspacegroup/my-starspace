@@ -2,7 +2,10 @@
 import { SvelteKitAuth } from '@auth/sveltekit';
 import type { DiscordProfile } from "@auth/core/providers/discord";
 import Discord from '@auth/core/providers/discord';
-import { AUTH_DISCORD_ID, AUTH_DISCORD_SECRET, AUTH_REDIRECT_PROXY_URL, AUTH_SECRET } from '$env/static/private';
+import { env } from '$env/dynamic/private';
+import { createAuthConfig } from '$lib/server/auth-config';
+
+const authConfig = createAuthConfig(env);
 
 // Define the type for a Discord Guild (based on Discord API documentation)
 interface DiscordGuild {
@@ -38,9 +41,9 @@ declare module "@auth/core/jwt" {
 export const { handle, signIn, signOut } = SvelteKitAuth({
   providers: [
     Discord({
-      clientId: AUTH_DISCORD_ID,
-      clientSecret: AUTH_DISCORD_SECRET,
-      redirectProxyUrl: AUTH_REDIRECT_PROXY_URL,
+      clientId: authConfig.clientId,
+      clientSecret: authConfig.clientSecret,
+      redirectProxyUrl: authConfig.redirectProxyUrl,
     })
   ],
   callbacks: {
@@ -76,7 +79,7 @@ export const { handle, signIn, signOut } = SvelteKitAuth({
       return token;
     },
   },
-  secret: AUTH_SECRET,
+  secret: authConfig.secret,
   basePath: 'user-auth',
   pages: {
     signIn: '/user-auth/login',

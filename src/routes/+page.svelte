@@ -4,9 +4,8 @@
   import { SignIn } from "@auth/sveltekit/components"
   import Icon from "@iconify/svelte"
 
-  export let title = "My *Space";
-  export let subtitle = "Post to your personal website from Discord.";
-  export let description = `Exclusive to <a href="https://discord.gg/6JXhPBAUWU" class="text-blue-500">*Space</a> members.`;
+  const title = "My *Space";
+  const subtitle = "Your *Space member dashboard.";
 </script>
 
 <main class="sm:flex items-center justify-center min-h-screen text-center px-6">  
@@ -14,7 +13,11 @@
     <div class="max-w-2xl">
       <h1 class="text-4xl font-bold sm:text-6xl">{title}</h1>
       <p class="mt-4 text-lg sm:text-xl">{subtitle}</p>
-      <p class="mt-4 text-lg sm:text-xl">{@html description}</p>
+      <p class="mt-4 text-lg sm:text-xl">
+        Exclusive to
+        <a href="https://discord.gg/6JXhPBAUWU" class="text-blue-500">*Space</a>
+        members.
+      </p>
       {#if page.data.session}
         <p>Signed in as {page.data.session.user?.name}</p>
          <a href="/my-dashboard" class="text-blue-500 hover:underline">My Dashboard</a>
